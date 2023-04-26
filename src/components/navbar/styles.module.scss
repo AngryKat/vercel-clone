@@ -1,7 +1,19 @@
-.nav-bar {
+.NavBar {
+   top: 0;
+   width: 100%;
+   padding: 0px 24px;
    position: sticky;
    display: flex;
+   z-index: 101;
+   justify-content: center;
    div {
       display: flex;
+   }
+}
+
+.CaretDown {
+   transition: rotate .2s;
+   &:hover {
+      rotate: 180deg;
    }
 }
