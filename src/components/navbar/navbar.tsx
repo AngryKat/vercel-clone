@@ -19,35 +19,80 @@ const navigationItems: NavItem[] = [
   { name: "Pricing", href: "pricing" },
 ];
 
+const SignUpButtonLink = () => {
+  return (
+    <Link href="signup"
+      className="flex items-center"
+      style={{
+        backgroundColor: 'white',
+        color: 'black',
+        borderRadius: 5,
+        padding: '0 12px',
+        margin: '0 12px',
+        whiteSpace: 'nowrap',
+        height: '100%',
+      }}>
+      <span>
+        Sign Up
+      </span>
+    </Link>)
+}
+
+const NavigationLinkItem = ({ name, href }: NavItem) => (
+  <NavigationMenu.Item>
+    <Link href={href} style={{ padding: '8px 12px' }}>
+      {name}
+    </Link>
+  </NavigationMenu.Item>
+)
+
+const NavigationTriggerItem = () => (
+  <NavigationMenu.Item key="Features--1">
+    <NavigationMenu.Trigger className="flex items-center" style={{ padding: '8px 12px' }}>
+      Features <CaretDownIcon className={styles.CaretDown} />
+    </NavigationMenu.Trigger>
+  </NavigationMenu.Item>
+)
+
 export default function NavBar() {
   return (
-    <header className={styles.NavBar}>
-      <Image
-        src="/vercel.svg"
-        alt="Vercel Logo"
-        className="dark:invert"
-        width={100}
-        height={24}
-        priority
-      />
-      <NavigationMenu.Root>
-        <NavigationMenu.List className="flex">
-          <NavigationMenu.Item>
-            <NavigationMenu.Trigger>
-              Features <CaretDownIcon className={styles.CaretDown} />
-            </NavigationMenu.Trigger>
-          </NavigationMenu.Item>
-          {navigationItems.map(({ name, href }) => (
-            <NavigationMenu.Item>
-              <Link href={href}>{name}</Link>
-            </NavigationMenu.Item>
-          ))}
-        </NavigationMenu.List>
-      </NavigationMenu.Root>
-      <div>
-        <Link href="/">Contact</Link>
-        <Link href="/">Login</Link>
-      </div>
-    </header>
+      <header className="flex items-center justify-center" style={{ minHeight: 64, width: '100%' }}>
+        <div className="flex items-center  px-6" style={{ fontSize: 14, width: 1248 }}>
+          <div className="flex mr-auto" style={{ flex: 1 }}>
+            <Image
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className="dark:invert"
+              width={100}
+              height={24}
+              priority
+            />
+          </div>
+          <div className="flex justify-center">
+            <NavigationMenu.Root>
+              <NavigationMenu.List className="flex items-center justify-center">
+                <NavigationTriggerItem />
+                {navigationItems.map((item) => (
+                  <NavigationLinkItem {...item} key={item.name} />
+                ))}
+              </NavigationMenu.List>
+            </NavigationMenu.Root>
+          </div>
+          <div className="flex items-center ml-auto justify-end" style={{ flex: 1, height: 32 }}>
+            <div>
+              <Link href="/"
+                style={{
+
+                  padding: '0 12px'
+                }}>Contact</Link>
+              <Link href="/"
+                style={{
+                  padding: '0 12px'
+                }}>Login</Link>
+            </div>
+            <SignUpButtonLink />
+          </div>
+        </div>
+      </header>
   );
 }
