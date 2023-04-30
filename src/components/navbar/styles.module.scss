@@ -1,7 +1,35 @@
 .CaretDown {
    transition: rotate .2s;
-   &:hover {
-      rotate: 180deg;
+}
+
+.SignUpButtonLink {
+   background-color: white;
+   border-radius: 5px;
+   color: black;
+   border-radius: 5;
+   padding: 0 12px;
+   margin-left: 12px;
+   white-space: nowrap;
+   height: 100%;
+
+   span {
+      width: 60px;
    }
 }
 
+.NavHeader {
+   min-height: 64px;
+
+   a,
+   button {
+      color: #a0a0a0;
+
+      &:hover {
+         color: white;
+      }
+   }
+
+   button:hover .CaretDown {
+      rotate: 180deg;
+   }
+}
