@@ -1,5 +1,5 @@
 I am upset with the fact, that I haven't had any opportunity to use Next.js in my workplace ( 
-Thus I decided to create a "clone" of vercel.com to learn and hone my skills 
+Thus I decided to create a "clone" of vercel.com to learn and hone my skills (at least at next routing)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
